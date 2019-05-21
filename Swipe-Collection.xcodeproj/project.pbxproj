@@ -20,6 +20,8 @@
 		8A72B8CC2294174100FD5F22 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8C52294174100FD5F22 /* MainViewController.swift */; };
 		8A72B8CD2294174100FD5F22 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8C62294174100FD5F22 /* MainInteractor.swift */; };
 		8A72B8D02294175600FD5F22 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A72B8CF2294175600FD5F22 /* MainViewController.storyboard */; };
+		8A72B8D3229417F000FD5F22 /* SectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8D2229417F000FD5F22 /* SectionCollectionView.swift */; };
+		8A72B8D5229417FF00FD5F22 /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72B8D4229417FF00FD5F22 /* SectionCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		8A72B8C52294174100FD5F22 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A72B8C62294174100FD5F22 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		8A72B8CF2294175600FD5F22 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		8A72B8D2229417F000FD5F22 /* SectionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionView.swift; sourceTree = "<group>"; };
+		8A72B8D4229417FF00FD5F22 /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		8A72B8C02294172E00FD5F22 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8A72B8D1229417DA00FD5F22 /* Section */,
 				8A72B8CF2294175600FD5F22 /* MainViewController.storyboard */,
 				8A72B8C52294174100FD5F22 /* MainViewController.swift */,
 				8A72B8C62294174100FD5F22 /* MainInteractor.swift */,
@@ -102,6 +107,15 @@
 				8A72B8C32294174100FD5F22 /* MainRouter.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8A72B8D1229417DA00FD5F22 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				8A72B8D2229417F000FD5F22 /* SectionCollectionView.swift */,
+				8A72B8D4229417FF00FD5F22 /* SectionCollectionViewCell.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +197,9 @@
 				8A72B8CB2294174100FD5F22 /* MainModels.swift in Sources */,
 				8A72B8BF2294171800FD5F22 /* WebImageView.swift in Sources */,
 				8A72B8CC2294174100FD5F22 /* MainViewController.swift in Sources */,
+				8A72B8D3229417F000FD5F22 /* SectionCollectionView.swift in Sources */,
 				8A72B8C92294174100FD5F22 /* MainWorker.swift in Sources */,
+				8A72B8D5229417FF00FD5F22 /* SectionCollectionViewCell.swift in Sources */,
 				8A72B8A8229416B200FD5F22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
