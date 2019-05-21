@@ -1,5 +1,5 @@
 //
-//  SectionCollectionView.swift
+//  SubsectionCollectionView.swift
 //  Swipe-Collection
 //
 //  Created by Maxim Spiridonov on 21/05/2019.
@@ -8,15 +8,13 @@
 
 import UIKit
 
-
-
-struct SectionViewModel {
+struct SubectionViewModel {
     
 }
 
-class SectionCollectionView: UICollectionView {
+class SubsectionCollectionView: UICollectionView {
     
-    var cells = [SectionViewModel]()
+    var cells = [SubectionViewModel]()
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -24,23 +22,24 @@ class SectionCollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: layout)
         
         setupCollectionSettings()
-        
+        backgroundColor = .random()
     }
     
     
     
-    func set(cells: [SectionViewModel]) {
+    func set(cells: [SubectionViewModel]) {
         self.cells = cells
     }
     
     private func setupCollectionSettings() {
         delegate = self
         dataSource = self
-        register(SectionCollectionViewCell.self, forCellWithReuseIdentifier: SectionCollectionViewCell.reuseId)
+        register(SubsectionCollectionViewCell.self, forCellWithReuseIdentifier: SubsectionCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
-        isPagingEnabled = true
+//        isPagingEnabled = true
+        print("olo")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,39 +48,41 @@ class SectionCollectionView: UICollectionView {
 }
 
 
-extension SectionCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
+extension SubsectionCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Int.random(in: 2..<6)
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: SectionCollectionViewCell.reuseId, for: indexPath) as! SectionCollectionViewCell
-        cell.set()
+        let cell = dequeueReusableCell(withReuseIdentifier: SubsectionCollectionViewCell.reuseId, for: indexPath) as! SubsectionCollectionViewCell
+        cell.set(imageUrl: "https://kor.ill.in.ua/m/610x385/1804612.jpg")
         return cell
     }
+
+
 }
 
 
-extension SectionCollectionView: UICollectionViewDelegateFlowLayout {
-    
+extension SubsectionCollectionView: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+
+        return CGSize(width: 200, height: 150)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 20.0
     }
-    
-}
 
+}

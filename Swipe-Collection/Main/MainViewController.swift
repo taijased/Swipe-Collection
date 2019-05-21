@@ -17,7 +17,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic)?
     
-    private var sectionCollectionView = SectionViewController()
+    private var sectionCollectionView = SectionCollectionView()
     
     
     // MARK: Setup
