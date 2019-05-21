@@ -46,7 +46,7 @@ class MainViewController: UIViewController, MainDisplayLogic {
         setup()
         view.addSubview(sectionCollectionView)
         sectionCollectionView.fillSuperview()
-        
+
     }
     
     func displayData(viewModel: Main.Model.ViewModel.ViewModelData) {

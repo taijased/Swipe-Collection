@@ -23,24 +23,27 @@ class SectionViewController: UICollectionView {
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        
-        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        delegate = self
-        dataSource = self
-        register(SectionCollectionViewCell.self, forCellWithReuseIdentifier: SectionCollectionViewCell.reuseId)
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        layout.minimumLineSpacing = 20
-        
-        showsHorizontalScrollIndicator = false
-        showsVerticalScrollIndicator = false
-        
-        isPagingEnabled = true
+        setupCollectionSettings()
     }
+    
+    
     
     func set(cells: [SectionViewModel]) {
         self.cells = cells
     }
+    
+    private func setupCollectionSettings() {
+        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        delegate = self
+        dataSource = self
+        register(SectionCollectionViewCell.self, forCellWithReuseIdentifier: SectionCollectionViewCell.reuseId)
+        translatesAutoresizingMaskIntoConstraints = false
+        layout.minimumLineSpacing = 20
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
+        isPagingEnabled = true
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -54,7 +57,7 @@ extension SectionViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: SectionCollectionViewCell.reuseId, for: indexPath) as! SectionCollectionViewCell
-    
+        cell.set()
         return cell
     }
 }
