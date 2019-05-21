@@ -38,7 +38,6 @@ class SectionViewController: UICollectionView {
         dataSource = self
         register(SectionCollectionViewCell.self, forCellWithReuseIdentifier: SectionCollectionViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
-        layout.minimumLineSpacing = 20
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         isPagingEnabled = true
