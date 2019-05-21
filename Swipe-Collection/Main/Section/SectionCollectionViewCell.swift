@@ -13,6 +13,7 @@ class SectionCollectionViewCell: UICollectionViewCell {
     static let reuseId = "SectionCollectionViewCell"
     
     private var subsectionCollectionView = SubsectionCollectionView()
+    private var categoryCollectionView = CategoryCollectionView()
     
     
     
@@ -29,12 +30,20 @@ class SectionCollectionViewCell: UICollectionViewCell {
         addSubview(subsectionCollectionView)
        
 
-    
+        // add constraint subsectionCollectionView
         subsectionCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         subsectionCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         subsectionCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         subsectionCollectionView.heightAnchor.constraint(equalToConstant: 220).isActive = true
 
+        
+        addSubview(categoryCollectionView)
+
+        categoryCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 220).isActive = true
+        categoryCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        categoryCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        categoryCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
         
         
     }
